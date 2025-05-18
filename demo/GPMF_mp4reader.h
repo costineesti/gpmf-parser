@@ -20,6 +20,7 @@
 *
 */
 
+#include <stdio.h>
 #ifndef _GPMF_MP4READER_H
 #define _GPMF_MP4READER_H
 

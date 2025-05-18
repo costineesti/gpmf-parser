@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgpmf-parser.a  CMakeFiles/GPMF_PARSER_LIB.dir/GPMF_parser.c.o CMakeFiles/GPMF_PARSER_LIB.dir/GPMF_utils.c.o
+/usr/bin/ranlib libgpmf-parser.a

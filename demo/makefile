@@ -10,6 +10,9 @@ endif
 
 gpmfdemo : GPMF_demo.o GPMF_parser.o GPMF_utils.o GPMF_mp4reader.o GPMF_print.o
 		gcc -o gpmfdemo GPMF_demo.o GPMF_parser.o GPMF_utils.o GPMF_mp4reader.o GPMF_print.o $(ASAN_FLAGS)
+#Added by me extract_utc.c
+extract_utc: extract_utc.c GPMF_parser.o GPMF_utils.o GPMF_mp4reader.o
+		gcc -g -o extract_utc extract_utc.c GPMF_parser.o GPMF_utils.o GPMF_mp4reader.o $(ASAN_FLAGS)
 
 GPMF_demo.o : GPMF_demo.c
 		gcc -g -c GPMF_demo.c
