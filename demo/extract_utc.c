@@ -43,6 +43,11 @@ int main(int argc, char *argv[]) {
         if (GPMF_OK != GPMF_Init(&gs, (uint32_t *)payload, payload_size))
             continue;
 
+        double in = 0.0, out = 0.0;
+        if (GetPayloadTime(mp4handle, i, &in, &out) == GPMF_OK) {
+            printf("Payload %u | Timeline Start: %.6f s | End: %.6f s\n", i, in, out);
+        }
+
         if (GPMF_OK == GPMF_FindNext(&gs, STR2FOURCC("STMP"), GPMF_RECURSE_LEVELS)) {
             const uint8_t *data = (const uint8_t *)GPMF_RawData(&gs);
             int size = GPMF_RawDataSize(&gs);
